@@ -42,20 +42,16 @@
         <h2>Listado usuarios</h2>
         <table>
             <tr>
-                <th>usuario</th>
-                <th>teléfono</th>
-                <th>email</th>
-                <th>contraseña</th>
-                <th>avatar</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Contraseña</th>
                 <th>Acciones</th>
             </tr>
             @foreach ($users as $user)
                 <tr>
-                    <td>{{ $user->usuario }}</td>
-                    <td>{{ $user->telefono }}</td>
+                    <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->password }}</td>
-                    <td>{{ $user->avatar }}</td>
                     <td>
                         <a href="/users/ver/{{$user->id}}">Ver</a>
                         <a href="/users/editar/{{$user->id}}">Editar</a>

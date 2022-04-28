@@ -43,11 +43,9 @@
         <br>
         <h2>Ver alumno</h2>
         <div>
-            <p> Usuario: {{ $user->usuario}}</p>
+            <p> Usuario: {{ $user->name}}</p>
             <p> Email: {{ $user->email}}</p>
-            <p> Teléfono: {{ $user->telefono}}</p>
             <p> Contraseña: {{ $user->password}}</p>
-            <p> Avatar: {{ $user->avatar}}</p>
         </div>      
     </body>
 <html>

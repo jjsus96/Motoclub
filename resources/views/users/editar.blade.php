@@ -46,16 +46,12 @@
             <form action="/users/editar/{{ $user->id}}" method ="POST">
                 @csrf
                 {{ method_field('PUT') }}
-                <label>Usuario:</label>
-                <input type="text" name="usuario" placeholder="usuario" value="{{ $user->usuario}}">
-                <label>Teléfono:</label>
-                <input type="text" name="telefono" placeholder="teléfono" value="{{ $user->telefono}}">
+                <label>Nombre:</label>
+                <input type="text" name="name" placeholder="usuario" value="{{ $user->name}}">
                 <label>Email:</label>
                 <input type="text" name="email" placeholder="email" value="{{ $user->email}}">
                 <label>Contraseña:</label>
                 <input type="text" name="contraseña" placeholder="contraseña" value="{{ $user->password}}">
-                <label>Avatar:</label>
-                <input type="text" name="avatar" placeholder="avatar" value="{{ $user->avatar}}">
                 <input type="submit" value="Guardar">
             </form>
         </div>   

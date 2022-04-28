@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nombre_socio');
             $table->string('apellidos');
             $table->string('fecha_nacimiento');
+            $table->string('telefono');
             $table->string('direccion');
             $table->string('padrino');
             $table->string('motocicleta');

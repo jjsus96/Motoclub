@@ -45,16 +45,12 @@
         <div>
             <form action="/users/crear" method ="POST">
                 @csrf
-                <label>Usuario:</label>
-                <input type="text" name="usuario" placeholder="Usuario">
+                <label>Nombre:</label>
+                <input type="text" name="name" placeholder="Nombre">
                 <label>Email:</label>
                 <input type="text" name="email" placeholder="Email">
-                <label>Teléfono:</label>
-                <input type="text" name="telefono" placeholder="Teléfono">
                 <label>Contraseña:</label>
                 <input type="text" name="password" placeholder="Contraseña">
-                <label>Avatar:</label>
-                <input type="text" name="avatar" placeholder="Avatar">
                 <input type="submit" value="Guardar">
             </form>
         </div>       
