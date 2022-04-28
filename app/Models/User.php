@@ -35,11 +35,11 @@ class User extends Authenticatable
 
     public function obtenerUsers()
     {
-        return Socios::all();
+        return User::all();
     }
 
-    public function obtenerUsersPorId($id)
+    public function obtenerUserPorId($id)
     {
-        return Socios::find($id);
+        return User::find($id);
     }
 }

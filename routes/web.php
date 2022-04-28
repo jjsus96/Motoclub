@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
 Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/crear', [UserController::class, 'create']);
+Route::post('/users/crear',  [UserController::class, 'store']);
+Route::get('/users/ver/{id}', [UserController::class, 'show']);
+Route::get('/users/editar/{id}', [UserController::class, 'edit']);
+Route::put('/users/editar/{id}',  [UserController::class, 'update']);
+Route::get('/users/eliminar/{id}',  [UserController::class, 'destroy']);

@@ -43,27 +43,35 @@
         <table>
             <tr>
                 <th>usuario</th>
-                <th>email</th>
                 <th>teléfono</th>
+                <th>email</th>
                 <th>contraseña</th>
                 <th>avatar</th>
+                <th>Acciones</th>
             </tr>
             @foreach ($users as $user)
                 <tr>
                     <td>{{ $user->usuario }}</td>
-                    <td>{{ $user->email }}</td>
                     <td>{{ $user->telefono }}</td>
+                    <td>{{ $user->email }}</td>
                     <td>{{ $user->password }}</td>
-                    <td>{{ $user->direccion }}</td>
+                    <td>{{ $user->avatar }}</td>
                     <td>
                         <a href="/users/ver/{{$user->id}}">Ver</a>
                         <a href="/users/editar/{{$user->id}}">Editar</a>
-                        <a href="/users/eliminar/{{$user->id}}">Eliminar</a>
+                        <a href="/users/eliminar/{{$user->id}}" onclick="return eliminarUser('Eliminar Usuario')"> Eliminar</a>
                     </td>
                 </tr>
             @endforeach  
-        </table>
+        </table>  
         <br>
         <a href="/users/crear">Nuevo usuario</a>          
     </body>
+
+    <script>
+        function eliminarUser(value) {
+            action = confirm(value) ? true : event.preventDefault()
+        }
+    </script>
+
 <html>
