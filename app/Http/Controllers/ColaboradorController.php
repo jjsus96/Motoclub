@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Colaboradores;
+use App\Models\Colaborador;
 
-class ColaboradoresController extends Controller
+class ColaboradorController extends Controller
 {
     protected $colaboradores;
 
