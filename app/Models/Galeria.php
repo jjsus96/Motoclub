@@ -10,10 +10,10 @@ class Galeria extends Model
     use HasFactory;
     
     protected $table = "galeria";
-    protected $fillable = ['id', 'imagen', 'evento_id'];
-    protected $hidden = [];
+    protected $fillable = ['imagen'];
+    protected $hidden = ['id', 'evento_id'];
 
-    public function obtenerGaleria()
+    public function obtenerGalerias()
     {
         return Galeria::all();
     }

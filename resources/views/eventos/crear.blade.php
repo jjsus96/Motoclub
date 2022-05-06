@@ -39,19 +39,28 @@
         </style>
     </head>
     <body>
-        <a href="/socios">Ver listado de Socios</a>
+        <a href="/eventos">Ver listado de usuarios</a>
         <br>
-        <h2>Ver alumno</h2>
+        <h2>Nuevo usuario</h2>
         <div>
-            <p> Usuario: {{ $socio->usuario_id}}</p>
-            <p> Nombre: {{ $socio->nombre_socio}}</p>
-            <p> Apellidos: {{ $socio->apellidos}}</p>
-            <p> Fecha de nacimiento: {{ $socio->fecha_nacimiento}}</p>
-            <p> Teléfono: {{ $socio->telefono}}</p>
-            <p> Dirección: {{ $socio->direccion}}</p>
-            <p> Padrino: {{ $socio->padrino}}</p>
-            <p> Motocicleta: {{ $socio->motocicleta}}</p>
-            <p> Foto de Carnet: {{ $socio->foto_carnet}}</p>
-        </div>      
+            <form action="/eventos/crear" method ="POST">
+                @csrf
+                <label>Nombre Evento:</label>
+                <input type="text" name="nombre_evento" placeholder="Nombre Evento">
+                <label>Fecha Inicio:</label>
+                <input type="text" name="fecha_inicio" placeholder="Fecha Inicio">
+                <label>Descripción:</label>
+                <input type="text" name="descripcion" placeholder="Descripción">
+                <label>Colaborador:</label>
+                <input type="text" name="colaborador_id" placeholder="Colaborador">
+                <label>Patrocinador:</label>
+                <input type="text" name="patrocinador_id" placeholder="Patrocinador">
+                <label>Usuario:</label>
+                <input type="text" name="usuario_id" placeholder="Usuario">
+                <label>Imagen:</label>
+                <input type="text" name="imagen_id" placeholder="Imagen">
+                <input type="submit" value="Guardar">
+            </form>
+        </div>       
     </body>
 <html>

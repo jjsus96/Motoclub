@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Eventos;
+use App\Models\Evento;
 
-class EventosController extends Controller
+class EventoController extends Controller
 {
     protected $eventos;
 

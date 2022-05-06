@@ -39,19 +39,12 @@
         </style>
     </head>
     <body>
-        <a href="/socios">Ver listado de Socios</a>
+        <a href="/galerias">Ver listado de Imagenes</a>
         <br>
-        <h2>Ver alumno</h2>
+        <h2>Ver Imagen</h2>
         <div>
-            <p> Usuario: {{ $socio->usuario_id}}</p>
-            <p> Nombre: {{ $socio->nombre_socio}}</p>
-            <p> Apellidos: {{ $socio->apellidos}}</p>
-            <p> Fecha de nacimiento: {{ $socio->fecha_nacimiento}}</p>
-            <p> Teléfono: {{ $socio->telefono}}</p>
-            <p> Dirección: {{ $socio->direccion}}</p>
-            <p> Padrino: {{ $socio->padrino}}</p>
-            <p> Motocicleta: {{ $socio->motocicleta}}</p>
-            <p> Foto de Carnet: {{ $socio->foto_carnet}}</p>
+            <p> Imagen: {{ $galeria->imagen}}</p>
+            <p> Evento: {{ $galeria->evento_id}}</p>
         </div>      
     </body>
 <html>

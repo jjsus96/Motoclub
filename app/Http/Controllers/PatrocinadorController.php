@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Patrocinadores;
+use App\Models\Patrocinador;
 
-class PatrocinadoresController extends Controller
+class PatrocinadorController extends Controller
 {
     protected $patrocinadores;
 

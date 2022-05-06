@@ -39,19 +39,31 @@
         </style>
     </head>
     <body>
-        <a href="/users">Ver listado de usuarios</a>
+        <a href="/socios">Ver listado de usuarios</a>
         <br>
         <h2>Editar usuario</h2>
         <div>
-            <form action="/users/editar/{{ $user->id}}" method ="POST">
+            <form action="/socios/editar/{{ $socio->id}}" method ="POST">
                 @csrf
                 {{ method_field('PUT') }}
+                <label>Usuario:</label>
+                <input type="text" name="usuario_id" placeholder="usuario" value="{{ $socio->usuario_id}}">
                 <label>Nombre:</label>
-                <input type="text" name="name" placeholder="usuario" value="{{ $user->name}}">
-                <label>Email:</label>
-                <input type="text" name="email" placeholder="email" value="{{ $user->email}}">
-                <label>Contraseña:</label>
-                <input type="text" name="contraseña" placeholder="contraseña" value="{{ $user->password}}">
+                <input type="text" name="nombre_socio" placeholder="Nombre" value="{{ $socio->nombre_socio}}">
+                <label>Apellidos:</label>
+                <input type="text" name="apellidos" placeholder="apellidos" value="{{ $socio->apellidos}}">
+                <label>Fecha de Nacimiento:</label>
+                <input type="text" name="fecha_nacimiento" placeholder="fecha_nacimiento" value="{{ $socio->fecha_nacimiento}}">
+                <label>Teléfono:</label>
+                <input type="text" name="telefono" placeholder="telefono" value="{{ $socio->telefono}}">
+                <label>Dirección:</label>
+                <input type="text" name="direccion" placeholder="direccion" value="{{ $socio->direccion}}">
+                <label>Padrino:</label>
+                <input type="text" name="padrino" placeholder="padrino" value="{{ $socio->padrino}}">
+                <label>Motocicleta:</label>
+                <input type="text" name="motocicleta" placeholder="motocicleta" value="{{ $socio->motocicleta}}">
+                <label>Foto Carnet:</label>
+                <input type="text" name="foto_carnet" placeholder="foto_carnet" value="{{ $socio->foto_carnet}}">
                 <input type="submit" value="Guardar">
             </form>
         </div>   

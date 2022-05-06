@@ -16,7 +16,7 @@ class GaleriaController extends Controller
 
     public function index()
     {
-        $galerias = $this->galerias->obtenerGaleias();
+        $galerias = $this->galerias->obtenerGalerias();
         return view('galerias.lista', ['galerias' => $galerias]);
     }
 

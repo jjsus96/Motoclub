@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Socios;
+use App\Models\Socio;
 
-class SociosController extends Controller
+class SocioController extends Controller
 {
     protected $socios;
 

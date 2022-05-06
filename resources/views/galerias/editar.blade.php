@@ -39,19 +39,19 @@
         </style>
     </head>
     <body>
-        <a href="/socios">Ver listado de Socios</a>
+        <a href="/galerias">Ver listado de Imágenes</a>
         <br>
-        <h2>Ver alumno</h2>
+        <h2>Editar Imagen</h2>
         <div>
-            <p> Usuario: {{ $socio->usuario_id}}</p>
-            <p> Nombre: {{ $socio->nombre_socio}}</p>
-            <p> Apellidos: {{ $socio->apellidos}}</p>
-            <p> Fecha de nacimiento: {{ $socio->fecha_nacimiento}}</p>
-            <p> Teléfono: {{ $socio->telefono}}</p>
-            <p> Dirección: {{ $socio->direccion}}</p>
-            <p> Padrino: {{ $socio->padrino}}</p>
-            <p> Motocicleta: {{ $socio->motocicleta}}</p>
-            <p> Foto de Carnet: {{ $socio->foto_carnet}}</p>
-        </div>      
+            <form action="/galerias/editar/{{ $galeria->id}}" method ="POST">
+                @csrf
+                {{ method_field('PUT') }}
+                <label>Imagen:</label>
+                <input type="text" name="imagen" placeholder="imagen" value="{{ $galerias->imagen}}">
+                <label>Evento:</label>
+                <input type="text" name="evento_id" placeholder="Evento" value="{{ $galerias->evento_id}}">
+                <input type="submit" value="Guardar">
+            </form>
+        </div>   
     </body>
 <html>

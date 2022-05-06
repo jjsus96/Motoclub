@@ -39,45 +39,33 @@
         </style>
     </head>
     <body>
-        <h2>Listado Socios</h2>
+        <h2>Listado de patrocinadores</h2>
         <table>
             <tr>
-                <th>Usuario</th>
                 <th>Nombre</th>
-                <th>Apelliods</th>
-                <th>Fecha de nacimiento</th>
                 <th>Teléfono</th>
-                <th>Dirección</th>
-                <th>Padrino</th>
-                <th>Motocicleta</th>
-                <th>Foto de carnet</th>
+                <th>Email</th>
                 <th>Acciones</th>
             </tr>
-            @foreach ($socios as $socio)
+            @foreach ($patrocinadores as $patrocinador)
                 <tr>
-                    <td>{{ $socio->usuario_id }}</td>
-                    <td>{{ $socio->nombre_socio }}</td>
-                    <td>{{ $socio->apellidos }}</td>
-                    <td>{{ $socio->fecha_nacimiento }}</td>
-                    <td>{{ $socio->telefono }}</td>
-                    <td>{{ $socio->direccion }}</td>
-                    <td>{{ $socio->padrino }}</td>
-                    <td>{{ $socio->motocicleta }}</td>
-                    <td>{{ $socio->foto_carnet }}</td>
+                    <td>{{ $patrocinador->nombre_patrocinador }}</td>
+                    <td>{{ $patrocinador->telefono_patrocinador }}</td>
+                    <td>{{ $patrocinador->email_patrocinador }}</td>
                     <td>
-                        <a href="/socios/ver/{{$socio->id}}">Ver</a>
-                        <a href="/socios/editar/{{$socio->id}}">Editar</a>
-                        <a href="/socios/eliminar/{{$socio->id}}" onclick="return eliminarSocio('Eliminar Socio')"> Eliminar</a>
+                        <a href="/patrocinadores/ver/{{$patrocinador->id}}">Ver</a>
+                        <a href="/patrocinadores/editar/{{$patrocinador->id}}">Editar</a>
+                        <a href="/patrocinadores/eliminar/{{$patrocinador->id}}" onclick="return eliminarPatrocinador('Eliminar Patrocinador')"> Eliminar</a>
                     </td>
                 </tr>
             @endforeach  
         </table>  
         <br>
-        <a href="/socios/crear">Nuevo Socio</a>          
+        <a href="/patrocinadores/crear">Nuevo patrocinador</a>          
     </body>
 
     <script>
-        function eliminarSocio(value) {
+        function eliminarPatrocinador(value) {
             action = confirm(value) ? true : event.preventDefault()
         }
     </script>

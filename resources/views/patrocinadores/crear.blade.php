@@ -39,19 +39,20 @@
         </style>
     </head>
     <body>
-        <a href="/socios">Ver listado de Socios</a>
+        <a href="/patrocinadores">Ver listado de patrocinadores</a>
         <br>
-        <h2>Ver alumno</h2>
+        <h2>Nuevo patrocinador</h2>
         <div>
-            <p> Usuario: {{ $socio->usuario_id}}</p>
-            <p> Nombre: {{ $socio->nombre_socio}}</p>
-            <p> Apellidos: {{ $socio->apellidos}}</p>
-            <p> Fecha de nacimiento: {{ $socio->fecha_nacimiento}}</p>
-            <p> Teléfono: {{ $socio->telefono}}</p>
-            <p> Dirección: {{ $socio->direccion}}</p>
-            <p> Padrino: {{ $socio->padrino}}</p>
-            <p> Motocicleta: {{ $socio->motocicleta}}</p>
-            <p> Foto de Carnet: {{ $socio->foto_carnet}}</p>
-        </div>      
+            <form action="/patrocinadores/crear" method ="POST">
+                @csrf
+                <label>Nombre:</label>
+                <input type="text" name="nombre_patrocinador" placeholder="Nombre">
+                <label>Teléfono:</label>
+                <input type="text" name="telefono_patrocinador" placeholder="Contraseña">
+                <label>Email:</label>
+                <input type="text" name="email_patrocinador" placeholder="Email">
+                <input type="submit" value="Guardar">
+            </form>
+        </div>       
     </body>
 <html>

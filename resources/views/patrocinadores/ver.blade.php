@@ -39,19 +39,13 @@
         </style>
     </head>
     <body>
-        <a href="/socios">Ver listado de Socios</a>
+        <a href="/patrocinadores">Ver listado de Colaboradores</a>
         <br>
-        <h2>Ver alumno</h2>
+        <h2>Ver Patrocinador</h2>
         <div>
-            <p> Usuario: {{ $socio->usuario_id}}</p>
-            <p> Nombre: {{ $socio->nombre_socio}}</p>
-            <p> Apellidos: {{ $socio->apellidos}}</p>
-            <p> Fecha de nacimiento: {{ $socio->fecha_nacimiento}}</p>
-            <p> Teléfono: {{ $socio->telefono}}</p>
-            <p> Dirección: {{ $socio->direccion}}</p>
-            <p> Padrino: {{ $socio->padrino}}</p>
-            <p> Motocicleta: {{ $socio->motocicleta}}</p>
-            <p> Foto de Carnet: {{ $socio->foto_carnet}}</p>
+            <p> Nombre Patrocinador: {{ $patrocinador->nombre_patrocinador}}</p>
+            <p> Teléfono Patrocinador: {{ $patrocinador->telefono_patrocinador}}</p>
+            <p> Email Patrocinador: {{ $patrocinador->email_patrocinador}}</p>
         </div>      
     </body>
 <html>

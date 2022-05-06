@@ -39,19 +39,18 @@
         </style>
     </head>
     <body>
-        <a href="/socios">Ver listado de Socios</a>
+        <a href="/galerias">Ver listado de Galerías</a>
         <br>
-        <h2>Ver alumno</h2>
+        <h2>Nueva galería</h2>
         <div>
-            <p> Usuario: {{ $socio->usuario_id}}</p>
-            <p> Nombre: {{ $socio->nombre_socio}}</p>
-            <p> Apellidos: {{ $socio->apellidos}}</p>
-            <p> Fecha de nacimiento: {{ $socio->fecha_nacimiento}}</p>
-            <p> Teléfono: {{ $socio->telefono}}</p>
-            <p> Dirección: {{ $socio->direccion}}</p>
-            <p> Padrino: {{ $socio->padrino}}</p>
-            <p> Motocicleta: {{ $socio->motocicleta}}</p>
-            <p> Foto de Carnet: {{ $socio->foto_carnet}}</p>
-        </div>      
+            <form action="/galerias/crear" method ="POST">
+                @csrf
+                <label>Imagen:</label>
+                <input type="text" name="imagen" placeholder="Imagen">
+                <label>Evento:</label>
+                <input type="text" name="evento_id" placeholder="Evento">
+                <input type="submit" value="Guardar">
+            </form>
+        </div>       
     </body>
 <html>

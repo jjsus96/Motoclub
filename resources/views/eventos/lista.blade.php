@@ -39,45 +39,41 @@
         </style>
     </head>
     <body>
-        <h2>Listado Socios</h2>
+        <h2>Listado Eventos</h2>
         <table>
             <tr>
+                <th>Nombre Evento</th>
+                <th>Fecha Inicio</th>
+                <th>Descripción</th>
+                <th>Colaborador</th>
+                <th>Patrocinador</th>
                 <th>Usuario</th>
-                <th>Nombre</th>
-                <th>Apelliods</th>
-                <th>Fecha de nacimiento</th>
-                <th>Teléfono</th>
-                <th>Dirección</th>
-                <th>Padrino</th>
-                <th>Motocicleta</th>
-                <th>Foto de carnet</th>
+                <th>Imagen</th>
                 <th>Acciones</th>
             </tr>
-            @foreach ($socios as $socio)
+            @foreach ($eventos as $evento)
                 <tr>
-                    <td>{{ $socio->usuario_id }}</td>
-                    <td>{{ $socio->nombre_socio }}</td>
-                    <td>{{ $socio->apellidos }}</td>
-                    <td>{{ $socio->fecha_nacimiento }}</td>
-                    <td>{{ $socio->telefono }}</td>
-                    <td>{{ $socio->direccion }}</td>
-                    <td>{{ $socio->padrino }}</td>
-                    <td>{{ $socio->motocicleta }}</td>
-                    <td>{{ $socio->foto_carnet }}</td>
+                    <td>{{ $evento->nombre_evento }}</td>
+                    <td>{{ $evento->fecha_inicio }}</td>
+                    <td>{{ $evento->descripcion }}</td>
+                    <td>{{ $evento->colaborador_id }}</td>
+                    <td>{{ $evento->patrocinador_id }}</td>
+                    <td>{{ $evento->usuario_id }}</td>
+                    <td>{{ $evento->imagen_id }}</td>
                     <td>
-                        <a href="/socios/ver/{{$socio->id}}">Ver</a>
-                        <a href="/socios/editar/{{$socio->id}}">Editar</a>
-                        <a href="/socios/eliminar/{{$socio->id}}" onclick="return eliminarSocio('Eliminar Socio')"> Eliminar</a>
+                        <a href="/eventos/ver/{{$evento->id}}">Ver</a>
+                        <a href="/eventos/editar/{{$evento->id}}">Editar</a>
+                        <a href="/eventos/eliminar/{{$evento->id}}" onclick="return eliminarEvento('Eliminar Evento')"> Eliminar</a>
                     </td>
                 </tr>
             @endforeach  
         </table>  
         <br>
-        <a href="/socios/crear">Nuevo Socio</a>          
+        <a href="/eventos/crear">Nuevo Evento</a>          
     </body>
 
     <script>
-        function eliminarSocio(value) {
+        function eliminarEvento(value) {
             action = confirm(value) ? true : event.preventDefault()
         }
     </script>
