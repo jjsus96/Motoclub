@@ -41,10 +41,10 @@
     <body>
         <a href="/socios">Ver listado de usuarios</a>
         <br>
-        <h2>Nuevo usuario</h2>
+        <h2>Nuevo Socio</h2>
         <div>
             <form action="/socios/crear" method ="POST">
-                @csrf
+                @csrf 
                 <label>Usuario:</label>
                 <input type="text" name="usuario_id" placeholder="Usuario">
                 <label>Nombre:</label>
@@ -52,7 +52,7 @@
                 <label>Apellidos:</label>
                 <input type="text" name="apellidos" placeholder="Apellidos">
                 <label>Fecha de nacimiento:</label>
-                <input type="text" name="name" placeholder="Fecha_nacimiento">
+                <input type="text" name="fecha_nacimiento" placeholder="Fecha_nacimiento">
                 <label>Teléfono:</label>
                 <input type="text" name="telefono" placeholder="Teléfono">
                 <label>Dirección:</label>
