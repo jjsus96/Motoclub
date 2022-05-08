@@ -53,15 +53,17 @@
                     <td>{{ $colaborador->telefono_colaborador }}</td>
                     <td>{{ $colaborador->email_colaborador }}</td>
                     <td>
-                        <a href="/colaboradores/ver/{{$colaborador->id}}">Ver</a>
-                        <a href="/colaboradores/editar/{{$colaborador->id}}">Editar</a>
-                        <a href="/colaboradores/eliminar/{{$colaborador->id}}" onclick="return eliminarColaborador('Eliminar Colaborador')"> Eliminar</a>
+                        <a href="{{ route('colaboradores.show', $colaborador->id) }}">Ver</a>
+                        <a href="{{ route('colaboradores.edit', $colaborador->id) }}">Editar</a>
+                        {{ Form::open(['url' => route('colaboradores.destroy', $colaborador), 'method' => 'delete']) }}
+                        <button type="submit" onclick="return eliminarColaborador('Eliminar Colaborador')"> Eliminar</button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
-            @endforeach  
-        </table>  
+            @endforeach
+        </table>
         <br>
-        <a href="/colaboradores/crear">Nuevo colaborador</a>          
+        <a href="{{ route('colaboradores.create')}}">Nuevo colaborador</a>
     </body>
 
     <script>

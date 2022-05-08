@@ -53,15 +53,18 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->password }}</td>
                     <td>
-                        <a href="/users/ver/{{$user->id}}">Ver</a>
-                        <a href="/users/editar/{{$user->id}}">Editar</a>
-                        <a href="/users/eliminar/{{$user->id}}" onclick="return eliminarUser('Eliminar Usuario')"> Eliminar</a>
+                        {{-- <a href="/users/ver/{{$user->id}}">Ver</a> --}}
+                        <a href="{{ route('users.show', $user->id) }}">Ver</a>
+                        <a href="{{ route('users.edit', $user->id) }}">Editar</a>
+                        {{ Form::open(['url' => route('users.destroy', $user), 'method' => 'delete']) }}
+                        <button type="submit" onclick="return eliminarUser('Eliminar Usuario')"> Eliminar</button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
-            @endforeach  
-        </table>  
+            @endforeach
+        </table>
         <br>
-        <a href="/users/crear">Nuevo usuario</a>          
+        <a href="{{ route('users.create')}}">Nuevo usuario</a>
     </body>
 
     <script>

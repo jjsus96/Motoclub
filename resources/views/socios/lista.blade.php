@@ -65,15 +65,17 @@
                     <td>{{ $socio->motocicleta }}</td>
                     <td>{{ $socio->foto_carnet }}</td>
                     <td>
-                        <a href="/socios/ver/{{$socio->id}}">Ver</a>
-                        <a href="/socios/editar/{{$socio->id}}">Editar</a>
-                        <a href="/socios/eliminar/{{$socio->id}}" onclick="return eliminarSocio('Eliminar Socio')"> Eliminar</a>
+                        <a href="{{ route('socios.show', $socio->id) }}">Ver</a>
+                        <a href="{{ route('socios.edit', $socio->id) }}">Editar</a>
+                        {{ Form::open(['url' => route('socios.destroy', $socio), 'method' => 'delete']) }}
+                        <button type="submit" onclick="return eliminarSocio('Eliminar Socio')"> Eliminar</button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
-            @endforeach  
-        </table>  
+            @endforeach
+        </table>
         <br>
-        <a href="/socios/crear">Nuevo Socio</a>          
+        <a href="{{ route('socios.create')}}">Nuevo Socio</a>
     </body>
 
     <script>

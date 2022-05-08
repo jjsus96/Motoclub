@@ -52,9 +52,8 @@ class PatrocinadorController extends Controller
         return redirect()->action([PatrocinadorController::class, 'index']);
     }
 
-    public function destroy($id)
+    public function destroy(Patrocinador $patrocinador)
     {
-        $patrocinador = Patrocinador::find($id);
         $patrocinador->delete();
         return redirect()->action([PatrocinadorController::class, 'index']);
     }

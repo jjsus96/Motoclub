@@ -41,7 +41,7 @@
     <body>
         <a href="/colaboradores">Ver listado de colaboradores</a>
         <br>
-        <h2>Nuevo usuario</h2>
+        <h2>Nuevo Colaborador</h2>
         <div>
             <form action="/colaboradores/crear" method ="POST">
                 @csrf
@@ -53,6 +53,7 @@
                 <input type="text" name="email_colaborador" placeholder="Email">
                 <input type="submit" value="Guardar">
             </form>
-        </div>       
+        </div>
     </body>
 <html>
+

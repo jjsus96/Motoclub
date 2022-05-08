@@ -61,15 +61,17 @@
                     <td>{{ $evento->usuario_id }}</td>
                     <td>{{ $evento->imagen_id }}</td>
                     <td>
-                        <a href="/eventos/ver/{{$evento->id}}">Ver</a>
-                        <a href="/eventos/editar/{{$evento->id}}">Editar</a>
-                        <a href="/eventos/eliminar/{{$evento->id}}" onclick="return eliminarEvento('Eliminar Evento')"> Eliminar</a>
+                        <a href="{{ route('eventos.show', $evento->id) }}">Ver</a>
+                        <a href="{{ route('eventos.edit', $evento->id) }}">Editar</a>
+                        {{ Form::open(['url' => route('eventos.destroy', $evento), 'method' => 'delete']) }}
+                        <button type="submit" onclick="return eliminarEvento('Eliminar Evento')"> Eliminar</button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
-            @endforeach  
-        </table>  
+            @endforeach
+        </table>
         <br>
-        <a href="/eventos/crear">Nuevo Evento</a>          
+        <a href="{{ route('eventos.create')}}">Nuevo Evento</a>
     </body>
 
     <script>

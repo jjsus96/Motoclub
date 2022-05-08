@@ -52,9 +52,8 @@ class UserController extends Controller
         return redirect()->action([UserController::class, 'index']);
     }
 
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = User::find($id);
         $user->delete();
         return redirect()->action([UserController::class, 'index']);
     }

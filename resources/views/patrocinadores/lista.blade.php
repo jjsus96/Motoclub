@@ -53,15 +53,17 @@
                     <td>{{ $patrocinador->telefono_patrocinador }}</td>
                     <td>{{ $patrocinador->email_patrocinador }}</td>
                     <td>
-                        <a href="/patrocinadores/ver/{{$patrocinador->id}}">Ver</a>
-                        <a href="/patrocinadores/editar/{{$patrocinador->id}}">Editar</a>
-                        <a href="/patrocinadores/eliminar/{{$patrocinador->id}}" onclick="return eliminarPatrocinador('Eliminar Patrocinador')"> Eliminar</a>
+                        <a href="{{ route('patrocinadores.show', $patrocinador->id) }}">Ver</a>
+                        <a href="{{ route('patrocinadores.edit', $patrocinador->id) }}">Editar</a>
+                        {{ Form::open(['url' => route('patrocinadores.destroy', $patrocinador), 'method' => 'delete']) }}
+                        <button type="submit" onclick="return eliminarPatrocinador('Eliminar Patrocinador')"> Eliminar</button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
-            @endforeach  
-        </table>  
+            @endforeach
+        </table>
         <br>
-        <a href="/patrocinadores/crear">Nuevo patrocinador</a>          
+        <a href="{{ route('patrocinadores.create')}}">Nuevo patrocinador</a>
     </body>
 
     <script>

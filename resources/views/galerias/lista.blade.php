@@ -51,15 +51,17 @@
                     <td>{{ $galeria->imagen }}</td>
                     <td>{{ $galeria->evento_id }}</td>
                     <td>
-                        <a href="/galerias/ver/{{$galeria->id}}">Ver</a>
-                        <a href="/galerias/editar/{{$galeria->id}}">Editar</a>
-                        <a href="/galerias/eliminar/{{$galeria->id}}" onclick="return eliminarGaleria('Eliminar Galeria')"> Eliminar</a>
+                        <a href="{{ route('galerias.show', $galeria->id) }}">Ver</a>
+                        <a href="{{ route('galerias.edit', $galeria->id) }}">Editar</a>
+                        {{ Form::open(['url' => route('galerias.destroy', $galeria), 'method' => 'delete']) }}
+                        <button type="submit" onclick="return eliminarGaleria('Eliminar Galería')"> Eliminar</button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
-            @endforeach  
-        </table>  
+            @endforeach
+        </table>
         <br>
-        <a href="/galerias/crear">Nueva Imagen</a>          
+        <a href="{{ route('galerias.create')}}">Nueva Imagen</a>
     </body>
 
     <script>

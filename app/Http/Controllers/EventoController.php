@@ -52,9 +52,8 @@ class EventoController extends Controller
         return redirect()->action([EventoController::class, 'index']);
     }
 
-    public function destroy($id)
+    public function destroy(Evento $evento)
     {
-        $evento = Evento::find($id);
         $evento->delete();
         return redirect()->action([EventoController::class, 'index']);
     }

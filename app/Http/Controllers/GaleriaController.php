@@ -52,9 +52,8 @@ class GaleriaController extends Controller
         return redirect()->action([GaleriaController::class, 'index']);
     }
 
-    public function destroy($id)
+    public function destroy(Galeria $galeria)
     {
-        $galeria = Galeria::find($id);
         $galeria->delete();
         return redirect()->action([GaleriaController::class, 'index']);
     }

@@ -52,9 +52,8 @@ class ColaboradorController extends Controller
         return redirect()->action([ColaboradorController::class, 'index']);
     }
 
-    public function destroy($id)
+    public function destroy(Colaborador $colaborador)
     {
-        $colaborador = Colaborador::find($id);
         $colaborador->delete();
         return redirect()->action([ColaboradorController::class, 'index']);
     }

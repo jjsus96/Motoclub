@@ -52,9 +52,8 @@ class SocioController extends Controller
         return redirect()->action([SocioController::class, 'index']);
     }
 
-    public function destroy($id)
+    public function destroy(Socio $socio)
     {
-        $socio = Socio::find($id);
         $socio->delete();
         return redirect()->action([SocioController::class, 'index']);
     }
